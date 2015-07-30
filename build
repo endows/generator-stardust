@@ -9,5 +9,5 @@ find . -name "*.js" -type f | while read FILE
 do
     # ファイルパスを表示
     # html2jade ${FILE}
-    sed -e "s/.html/.jade/g" ${FILE}
+    sed -i -e "s/.html/.jade/g" ${FILE}
 done
