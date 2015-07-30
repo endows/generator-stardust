@@ -1,0 +1,25 @@
+html
+  body
+    template(name='<%= classified %>Index')
+      .container
+        .row-fluid
+          h1
+          |       
+          ul.list-group
+            | {{#each this}}
+            li.list-group-item
+              a(href='{{pathFor ', <%='singularized', %='') &quot;}}&quot;&gt;{{_id}}
+              |             
+              button.btn.btn-danger.btn-xs(data-action='delete', style='float:right')
+                span.glyphicon.glyphicon-trash
+                |               Delete
+              |             
+              a(href='{{pathFor ', edit_<%='singularized', %='')
+                | &quot; this}}&quot; class=&quot;btn btn-xs&quot; style=&quot;float:right; margin-right: 20px;&quot;&gt;
+                span.glyphicon.glyphicon-edit
+                |               Edit
+            |         {{/each}}
+          |       
+          a(href='{{pathFor ', new_<%='singularized', %='')
+            | &quot;}}&quot; class=&quot;btn btn-primary&quot;&gt;
+            | New
